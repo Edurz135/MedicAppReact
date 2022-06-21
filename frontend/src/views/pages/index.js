@@ -7,6 +7,6 @@ export { default as SelectRegisterPage } from "./mainPages/selectRegisterPage/se
 // DOCTOR
 export { default as DoctorMainPage } from "./doctorPages/doctorMainPage/doctorMainPage.page";
 export { default as DoctorCalendaryPage } from "./doctorPages/doctorCalendaryPage/doctorCalendaryPage.page";
-
+export { default as DoctorDatePage } from "./doctorPages/doctorDatePage/doctorDatePage.page"
 // PATIENT
 export { default as PatientMainPage } from "./patientPages/patientMainPage/patientMainPage.page";

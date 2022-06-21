@@ -1,5 +1,5 @@
 import React from "react";
-import { DoctorMainPage, DoctorCalendaryPage } from "../../../pages";
+import { DoctorMainPage, DoctorCalendaryPage, DoctorDatePage } from "../../../pages";
 import { useState } from "react";
 import "./doctor.styles.css"
 export default function DoctorLayout() {
@@ -14,7 +14,7 @@ export default function DoctorLayout() {
       index: 1,
       title: "Próximas citas",
       icon: "bx-globe",
-      component: <div>inicio2</div>,
+      component: <DoctorDatePage/>,
     },
     {
       index: 2,
@@ -99,8 +99,7 @@ export default function DoctorLayout() {
         </nav>
       </div>
       <div className="content-container">
-        {React.cloneElement(tabsData[2].component, {isNavOpen: isNavOpen})}
-        {/* {tabsData[currentTabIndex].component} */}
+        {React.cloneElement(tabsData[currentTabIndex].component, {isNavOpen: isNavOpen})}
       </div>
     </div>
   );
