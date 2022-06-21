@@ -1,0 +1,48 @@
+.content-header {
+  height: 90vh;
+}
+
+.content-header h1 {
+  line-height: 7.5rem;
+  font-size: 8rem;
+  color: black;
+  font-weight: bold;
+}
+
+.content-header p {
+  line-height: 0;
+  font-size: 2rem;
+  color: black;
+}
+
+.boton {
+  margin-top: 2.5rem;
+  width: 200px;
+}
+
+@media (max-width: 720px) {
+  .content-header h1 {
+    line-height: 5.5rem;
+    font-size: 6rem;
+    color: black;
+    font-weight: bold;
+  }
+
+  .content-header p {
+    font-size: 2rem;
+    color: black;
+  }
+}
+@media (max-width: 576px) {
+  .content-header h1 {
+    line-height: 4rem;
+    font-size: 4.5rem;
+    color: black;
+    font-weight: bold;
+  }
+
+  .content-header p {
+    font-size: 1.5rem;
+    color: black;
+  }
+}
