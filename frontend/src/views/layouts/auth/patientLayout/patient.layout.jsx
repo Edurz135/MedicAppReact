@@ -5,8 +5,6 @@ import { useState } from "react";
 import { PatientMainPage } from "../../../pages";
 import { SideNavbar, SideNavbarHeader } from "../../../../components";
 
-import "./patient.styles.css";
-
 export default function PatientLayout() {
   const tabsData = [
     {

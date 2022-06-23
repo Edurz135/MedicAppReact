@@ -1,19 +1,9 @@
 export default function DoctorDatePage() {
   return (
     <div>
-      <div className="row mt-4">
-        <div className="col-1 d-flex justify-content-center">
-          <a href="../calendario/doctor_calendario.html">
-            <i style={{fontSize: "3.5rem"}} className="bx bx-chevron-left"></i>
-          </a>
-        </div>
-        <div className="col-11">
-          <h1>Cita con Paciente 1</h1>
-        </div>
-      </div>
       <div className="row">
-        <div className="col-1"></div>
-        <div className="col-10 pt-4">
+        <div className="col-0 col-sm-1"></div>
+        <div className="col-12 col-sm-10 pt-2">
           <p className="fs-4">Datos Personales</p>
           <p>Nombre: Paciente 1</p>
           <p>Fecha de Nacimiento: 20/03/2000</p>
@@ -106,36 +96,8 @@ export default function DoctorDatePage() {
               </div>
             </div>
           </div>
-
-          <hr />
-          <form className="mt-4">
-            <label for="validationTextarea" className="form-label">
-              Notas Extras
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationServer03"
-              placeholder="Título"
-              aria-describedby="validationServer03Feedback"
-              required
-            />
-            <label for="validationServer03" className="form-label"></label>
-            <textarea
-              className="form-control"
-              id="validationTextarea"
-              placeholder="Información"
-              required
-            ></textarea>
-            <button className="btn btn-primary mt-4 mb-4">Agregar +</button>
-          </form>
-          <hr />
-          <a className="btn btn-primary mt-4 mb-4" href="./CulminarCita.html">
-            Realizar Diagnóstico
-          </a>
         </div>
       </div>
-      <div className="col-1"></div>
     </div>
   );
 }

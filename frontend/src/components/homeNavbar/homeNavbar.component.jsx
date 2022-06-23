@@ -5,7 +5,13 @@ export default function HomeNavbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a
+          className="navbar-brand"
+          onClick={() => {
+            navigate("/home/");
+          }}
+          href="#"
+        >
           MedicApp
         </a>
         <button
@@ -23,26 +29,31 @@ export default function HomeNavbar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a
+                href="#"
                 className="nav-link active"
                 aria-current="page"
-                href="../../pages/mainPages/recomendacion/recomendacion.html"
+                onClick={() => {
+                  navigate("/home/recomendaciones");
+                }}
               >
                 Recomendaciones
               </a>
             </li>
           </ul>
           <a
-            // href="../../pages/mainPages/login/Login.html"
-            onClick={() => {navigate("/home/login")}}
+            onClick={() => {
+              navigate("/home/login");
+            }}
             className="btn btn-outline-info me-2"
             type="submit"
-            >
+          >
             {" "}
             SignIn{" "}
           </a>
           <a
-            onClick={() => {navigate("/home/selectregister")}}
-            // href="../../pages/mainPages/register/MainRegistro.html"
+            onClick={() => {
+              navigate("/home/selectregister");
+            }}
             className="btn btn-info"
             type="submit"
           >

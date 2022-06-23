@@ -5,7 +5,6 @@ import { useState } from "react";
 import { DoctorMainPage, DoctorCalendaryPage } from "../../../pages";
 
 import { SideNavbar, SideNavbarHeader } from "../../../../components";
-import "./doctor.styles.css";
 
 export default function DoctorLayout() {
   const tabsData = [
@@ -65,7 +64,7 @@ export default function DoctorLayout() {
         currentTabIndex={currentTabIndex}
         setCurrentTabIndex={setCurrentTabIndex}
       />
-      <Routes>
+      <Routes> 
         <Route
           path={`/${tabsData[currentTabIndex].url}`}
           element={React.cloneElement(tabsData[currentTabIndex].component, {
