@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function HomeNavbar() {
+  const navigate = useNavigate();
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -29,15 +32,17 @@ export default function HomeNavbar() {
             </li>
           </ul>
           <a
-            href="../../pages/mainPages/login/Login.html"
+            // href="../../pages/mainPages/login/Login.html"
+            onClick={() => {navigate("/home/login")}}
             className="btn btn-outline-info me-2"
             type="submit"
-          >
+            >
             {" "}
             SignIn{" "}
           </a>
           <a
-            href="../../pages/mainPages/register/MainRegistro.html"
+            onClick={() => {navigate("/home/selectregister")}}
+            // href="../../pages/mainPages/register/MainRegistro.html"
             className="btn btn-info"
             type="submit"
           >

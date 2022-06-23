@@ -14,7 +14,7 @@ export default function DoctorLayout() {
       index: 1,
       title: "Próximas citas",
       icon: "bx-globe",
-      component: <DoctorDatePage/>,
+      component: <div>Proximas citas</div>,
     },
     {
       index: 2,

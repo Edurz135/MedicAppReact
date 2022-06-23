@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./mainPage.styles.css";
 
 export default function MainPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="container-fluid content-header">
       <div className="row" style={{ height: "100%" }}>
@@ -12,7 +15,8 @@ export default function MainPage() {
             <h1>importa</h1>
             <a
               className="btn btn-info btn-lg boton"
-              href="../../pages/mainPages/PacienteBusquedaDoctores/BuscarDoctores.html"
+              onClick={() => {navigate('/home/')}}
+              // href="../../pages/mainPages/PacienteBusquedaDoctores/BuscarDoctores.html"
             >
               Ver doctores
             </a>

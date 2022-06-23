@@ -2,6 +2,9 @@ import "./doctorCalendaryPage.styles.css";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import { React, useEffect, useState, useRef } from "react";
+
+import { Modal, Button } from "react-bootstrap";
+
 export default function DoctorCalendaryPage({ isNavOpen }) {
   const events = [
     {
@@ -13,13 +16,15 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
   const calendarRef = useRef(null);
   const [nav, setNav] = useState(isNavOpen);
 
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     if (isNavOpen != nav) {
       setNav(isNavOpen);
       setTimeout(refreshSize, 500);
     }
   });
-  
+
   const refreshSize = () => {
     let calendarApi = calendarRef.current.getApi();
     calendarApi.changeView("timeGridWeek");
@@ -27,6 +32,20 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
 
   return (
     <div>
+      <Modal show={show} onHide={() => setShow(false)}>
+        {/* <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header> */}
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShow(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => setShow(false)}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div>
         <h1 className="pt-4">Calendario</h1>
         <p className="pt-4">
@@ -34,7 +53,6 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
           mensual y semanal.
         </p>
       </div>
-
       <div>
         <FullCalendar
           ref={calendarRef}
@@ -47,6 +65,7 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
           hiddenDays="[0, 6]"
           eventClick={(info) => {
             console.log(info);
+            setShow(true);
           }}
           events={events}
         />
