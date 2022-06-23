@@ -5,8 +5,8 @@ export default function MainPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="container-fluid content-header">
-      <div className="row" style={{ height: "100%" }}>
+    <div className="container-fluid">
+      <div className="row content-header" style={{height: "90vh"}}>
         <div className="col-1 col-md-1"></div>
         <div className="col-11 col-md-10 d-flex align-items-center">
           <div>
@@ -16,7 +16,6 @@ export default function MainPage() {
             <a
               className="btn btn-info btn-lg boton"
               onClick={() => {navigate('/home/')}}
-              // href="../../pages/mainPages/PacienteBusquedaDoctores/BuscarDoctores.html"
             >
               Ver doctores
             </a>
