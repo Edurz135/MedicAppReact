@@ -64,7 +64,10 @@ export default function DoctorLayout() {
         currentTabIndex={currentTabIndex}
         setCurrentTabIndex={setCurrentTabIndex}
       />
-      <Routes> 
+      <Routes>
+        <Route path="/" element={React.cloneElement(tabsData[0].component, {
+            isNavOpen: isNavOpen,
+          })}/> 
         <Route
           path={`/${tabsData[currentTabIndex].url}`}
           element={React.cloneElement(tabsData[currentTabIndex].component, {

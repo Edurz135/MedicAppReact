@@ -2,7 +2,7 @@ import "./doctorCalendaryPage.styles.css";
 import { React, useEffect, useState, useRef } from "react";
 
 import { Tabs, Tab, Modal, Button } from "react-bootstrap";
-import { DoctorDatePage, DoctorExtraNote } from "../../../pages"
+import { DoctorDatePage, DoctorExtraNote } from "../../../pages";
 
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -27,6 +27,14 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
       setNav(isNavOpen);
       setTimeout(refreshSize, 500);
     }
+
+    const dataFetch = async () => {
+      const resp = await fetch("http://localhost:5000/");
+      const data = await resp;
+      console.log(data);
+    };
+
+    dataFetch();
   });
 
   const refreshSize = () => {
@@ -48,10 +56,10 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
             className="mb-3"
           >
             <Tab eventKey="datos" title="Datos">
-              <DoctorDatePage/>
+              <DoctorDatePage />
             </Tab>
             <Tab eventKey="profile" title="Profile">
-              <DoctorExtraNote/>
+              <DoctorExtraNote />
             </Tab>
           </Tabs>
         </Modal.Body>
