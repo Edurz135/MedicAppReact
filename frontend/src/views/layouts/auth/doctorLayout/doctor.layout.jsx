@@ -2,7 +2,14 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import { DoctorMainPage, DoctorCalendaryPage } from "../../../pages";
+import {
+  DoctorMainPage,
+  DoctorCalendaryPage,
+  DoctorNextDatesPage,
+  DoctorHistoryPage,
+  DoctorPrivateQuestionPage,
+  DoctorPublicQuestionPage,
+} from "../../../pages";
 
 import { SideNavbar, SideNavbarHeader } from "../../../../components";
 
@@ -19,7 +26,7 @@ export default function DoctorLayout() {
       index: 1,
       title: "Próximas citas",
       icon: "bx-globe",
-      component: <div>Proximas citas</div>,
+      component: <DoctorNextDatesPage />,
       url: "nextdates/",
     },
     {
@@ -33,21 +40,21 @@ export default function DoctorLayout() {
       index: 3,
       title: "Historial de citas",
       icon: "bx-history",
-      component: <div>historial de citas</div>,
+      component: <DoctorHistoryPage />,
       url: "history/",
     },
     {
       index: 4,
       title: "Preguntas privadas",
       icon: "bx-question-mark",
-      component: <div>preguntas privadas</div>,
+      component: <DoctorPrivateQuestionPage />,
       url: "privatequestions/",
     },
     {
       index: 5,
       title: "Preguntas públicas",
       icon: "bx-question-mark",
-      component: <div>preguntas públicas</div>,
+      component: <DoctorPublicQuestionPage />,
       url: "publicquestions/",
     },
   ];
@@ -65,15 +72,24 @@ export default function DoctorLayout() {
         setCurrentTabIndex={setCurrentTabIndex}
       />
       <Routes>
-        <Route path="/" element={React.cloneElement(tabsData[0].component, {
-            isNavOpen: isNavOpen,
-          })}/> 
         <Route
-          path={`/${tabsData[currentTabIndex].url}`}
-          element={React.cloneElement(tabsData[currentTabIndex].component, {
+          path="/"
+          element={React.cloneElement(tabsData[0].component, {
             isNavOpen: isNavOpen,
           })}
         />
+        {tabsData.map((tab) => {
+          return (
+            <Route
+              path={`/${tab.url}`}
+              element={React.cloneElement(tab.component, {
+                isNavOpen: isNavOpen,
+                setCurrentTabIndex: setCurrentTabIndex,
+                data: tab,
+              })}
+            />
+          );
+        })}
         <Route path="/*" element={<div>este link no tiene pagina</div>} />
       </Routes>
     </div>

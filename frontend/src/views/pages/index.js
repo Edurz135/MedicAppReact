@@ -5,10 +5,14 @@ export { default as RegisterPage } from "./mainPages/registerPage/registerPage.p
 export { default as SelectRegisterPage } from "./mainPages/selectRegisterPage/selectRegisterPage.page";
 
 // DOCTOR
-export { default as DoctorMainPage } from "./doctorPages/doctorMainPage/doctorMainPage.page";
 export { default as DoctorCalendaryPage } from "./doctorPages/doctorCalendaryPage/doctorCalendaryPage.page";
 export { default as DoctorDatePage } from "./doctorPages/doctorDatePage/doctorDatePage.page"
 export { default as DoctorExtraNote } from "./doctorPages/doctorExtraNote/doctorExtraNote.page"
+export { default as DoctorHistoryPage } from "./doctorPages/doctorHistoryPage/doctorHistoryPage.page"
+export { default as DoctorMainPage } from "./doctorPages/doctorMainPage/doctorMainPage.page";
+export { default as DoctorNextDatesPage } from "./doctorPages/doctorNextDatesPage/doctorNextDatesPage.pages"
+export { default as DoctorPrivateQuestionPage } from "./doctorPages/doctorPrivateQuestionPage/doctorPrivateQuestionPage.page"
+export { default as DoctorPublicQuestionPage } from "./doctorPages/doctorPublicQuestionPage/doctorPublicQuestionPage.page"
 
 // PATIENT
 export { default as PatientMainPage } from "./patientPages/patientMainPage/patientMainPage.page";

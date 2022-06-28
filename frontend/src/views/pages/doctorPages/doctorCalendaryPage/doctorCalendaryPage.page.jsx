@@ -7,7 +7,7 @@ import { DoctorDatePage, DoctorExtraNote } from "../../../pages";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 
-export default function DoctorCalendaryPage({ isNavOpen }) {
+export default function DoctorCalendaryPage(props) {
   const events = [
     {
       title: "Cita número 1",
@@ -16,17 +16,18 @@ export default function DoctorCalendaryPage({ isNavOpen }) {
     },
   ];
   const calendarRef = useRef(null);
-  const [nav, setNav] = useState(isNavOpen);
-  const [key, setKey] = useState("home");
+  const [nav, setNav] = useState(props.isNavOpen);
+  const [key, setKey] = useState("datos");
 
   const [show, setShow] = useState(false);
-  const [dateData, setDateData] = useState(null);
 
   useEffect(() => {
-    if (isNavOpen != nav) {
-      setNav(isNavOpen);
+    if (props.isNavOpen != nav) {
+      setNav(props.isNavOpen);
       setTimeout(refreshSize, 500);
     }
+
+    props.setCurrentTabIndex(props.data.index);
 
     const dataFetch = async () => {
       const resp = await fetch("http://localhost:5000/");

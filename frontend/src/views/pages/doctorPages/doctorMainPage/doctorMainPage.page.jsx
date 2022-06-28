@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import "./doctorMainPage.styles.css"
 
-export default function DoctorMainPage() {
+export default function DoctorMainPage(props) {
+
+  useEffect(() => {
+    props.setCurrentTabIndex(props.data.index);
+  }, [])
   return (
     <div>
       <div class="content-header">
