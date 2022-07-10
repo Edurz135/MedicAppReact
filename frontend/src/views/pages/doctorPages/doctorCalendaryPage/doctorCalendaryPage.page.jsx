@@ -8,19 +8,12 @@ import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 
 export default function DoctorCalendaryPage(props) {
-  const events = [
-    {
-      title: "Cita número 1",
-      start: "2022-06-21T11:00:00",
-      end: "2022-06-21T11:15:00",
-    },
-  ];
   const calendarRef = useRef(null);
   const [nav, setNav] = useState(props.isNavOpen);
   const [key, setKey] = useState("datos");
 
   const [show, setShow] = useState(false);
-
+  const [events, setEvents] = useState({});
   useEffect(() => {
     if (props.isNavOpen != nav) {
       setNav(props.isNavOpen);
@@ -30,13 +23,31 @@ export default function DoctorCalendaryPage(props) {
     props.setCurrentTabIndex(props.data.index);
 
     const dataFetch = async () => {
-      const resp = await fetch("http://localhost:5000/");
-      const data = await resp;
-      console.log(data);
+      const rawResponse = await fetch(
+        "http://localhost:5000/api/users/getdates",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ doctorId: 1 }),
+        }
+      );
+      const content = await rawResponse.json();
+      console.log(content.result);
+      let data = [];
+      content.result.forEach((event) => {
+        data.push({
+          start: event.startDate,
+          end: event.endDate,
+          title: "title1",
+        });
+      });
+      setEvents(data);
     };
 
     dataFetch();
-  });
+  }, []);
 
   const refreshSize = () => {
     let calendarApi = calendarRef.current.getApi();
