@@ -87,6 +87,7 @@ export default function DoctorLayout() {
                 setCurrentTabIndex: setCurrentTabIndex,
                 data: tab,
               })}
+              key={tab.index}
             />
           );
         })}

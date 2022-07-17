@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { HomeNavbar } from "../../../components";
 
-import { MainPage, LoginPage, SelectRegisterPage, RegisterPage } from "../../pages/";
+import { MainPage, LoginPage, SelectRegisterPage, RegisterPatientPage, RegisterDoctorPage } from "../../pages/";
 
 export default function HomeLayout() {
   return (
@@ -11,7 +11,8 @@ export default function HomeLayout() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/selectRegister" element={<SelectRegisterPage />} />
-        <Route path="/register" element={<RegisterPage/>} />
+        <Route path="/doctorregister" element={<RegisterDoctorPage/>} />
+        <Route path="/patientregister" element={<RegisterPatientPage/>} />
         <Route path="/*" element={<div>este link no tiene pagina</div>} />
       </Routes>
     </div>
