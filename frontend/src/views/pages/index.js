@@ -7,6 +7,7 @@ export { default as SelectRegisterPage } from "./mainPages/selectRegisterPage/se
 
 // DOCTOR
 export { default as DoctorCalendaryPage } from "./doctorPages/doctorCalendaryPage/doctorCalendaryPage.page";
+export { default as DoctorCulminarCita } from "./doctorPages/doctorCulminarCita/doctorCulminarCita.page";
 export { default as DoctorDatePage } from "./doctorPages/doctorDatePage/doctorDatePage.page";
 export { default as DoctorExtraNote } from "./doctorPages/doctorExtraNote/doctorExtraNote.page";
 export { default as DoctorHistoryPage } from "./doctorPages/doctorHistoryPage/doctorHistoryPage.page";

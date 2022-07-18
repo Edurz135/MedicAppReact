@@ -3,6 +3,7 @@ import { React, useEffect, useState, useRef } from "react";
 
 import { Tabs, Tab, Modal, Button } from "react-bootstrap";
 import {
+  DoctorCulminarCita,
   DoctorDatePage,
   DoctorExtraNote,
   DoctorMedicalRecord,
@@ -122,6 +123,9 @@ export default function DoctorCalendaryPage(props) {
             </Tab>
             <Tab eventKey="notasextras" title="Notas Extras">
               <DoctorExtraNote dateId={currentDateId} />
+            </Tab>
+            <Tab eventKey="culminarcita" title="Culminar Cita">
+              <DoctorCulminarCita />
             </Tab>
           </Tabs>
         </Modal.Body>
