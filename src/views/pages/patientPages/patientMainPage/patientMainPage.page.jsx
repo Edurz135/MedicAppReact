@@ -9,6 +9,8 @@ export default function PatientMainPage() {
           <h1>Nombre del Paciente</h1>
         </div>
       </div>
+  
+    
       <div>
         <p>Esta es su página de inicio. Suerte!</p>
       </div>
