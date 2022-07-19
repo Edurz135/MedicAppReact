@@ -19,3 +19,4 @@ export { default as DoctorPublicQuestionPage } from "./doctorPages/doctorPublicQ
 
 // PATIENT
 export { default as PatientMainPage } from "./patientPages/patientMainPage/patientMainPage.page";
+export { default as PatientHistoryPage } from "./patientPages/patienHistoryPage/patientHistoryPage.page";

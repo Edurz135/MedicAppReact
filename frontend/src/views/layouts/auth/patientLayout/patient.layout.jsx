@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import { PatientMainPage } from "../../../pages";
+import { PatientMainPage, PatientHistoryPage } from "../../../pages";
 import { SideNavbar, SideNavbarHeader } from "../../../../components";
 
 export default function PatientLayout() {
@@ -25,7 +25,7 @@ export default function PatientLayout() {
       index: 2,
       title: "Historial de citas",
       icon: "bx-history",
-      component: <div>paciente historial</div>,
+      component: <PatientHistoryPage />,
       url: "history/",
     },
   ];
