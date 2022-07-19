@@ -1,4 +1,5 @@
-
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./main.css";
 export default function RegisterPatientPage() {
     return (
          <div id="containerL" className="container-fluid">
