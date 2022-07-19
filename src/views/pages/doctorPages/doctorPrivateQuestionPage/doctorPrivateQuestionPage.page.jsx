@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./scriptsPP";
+import "./stylePP.css";
 export default function DoctorPrivateQuestionPage(props) {
   useEffect(() => {
     props.setCurrentTabIndex(props.data.index);
