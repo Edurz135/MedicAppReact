@@ -1,5 +1,5 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../Doctor_preguntas_privadas/scriptsPP";
+import "./scriptsPP";
 import "./stylePP.css";
 
 const Doctor_Preguntas_Privadas1 = () => {

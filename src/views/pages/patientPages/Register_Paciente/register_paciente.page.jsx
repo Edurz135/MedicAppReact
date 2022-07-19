@@ -1,5 +1,5 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../Register_Paciente/main.css";
+import "./main.css";
 
 const Registro_Paciente = () =>{
     return <div id="containerL" className="container-fluid">

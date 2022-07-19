@@ -1,6 +1,6 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./BuscarDoctores.css";
-import "../Busqueda_Paciente_a_Doctor/iconodoctor.png"
+import "./iconodoctor.png"
 
 const Buscar_Doctores = () =>{
     return <div className="container-fluid">
